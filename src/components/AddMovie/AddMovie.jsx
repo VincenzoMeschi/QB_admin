@@ -75,7 +75,7 @@ const AddMovie = (props) => {
                     })
                     .then(() => {
                         // Update img in statelessFormData
-                        statelessFormData.img = `https://d34me5uwzdrtz6.cloudfront.net/movie_posters/${
+                        statelessFormData.img = `https://d2y7tzts0qnmfj.cloudfront.net/movie_posters/${
                             formData.title
                         }.${formData.img.name.split(".")[1]}`;
                     })
@@ -114,7 +114,7 @@ const AddMovie = (props) => {
                     })
                     .then(() => {
                         // Update video in statelessFormData
-                        statelessFormData.video = `https://d34me5uwzdrtz6.cloudfront.net/movies/full_trailer/${
+                        statelessFormData.video = `https://d2y7tzts0qnmfj.cloudfront.net/movies/full_trailer/${
                             formData.title
                         }.${formData.video.name.split(".")[1]}`;
                     })
@@ -153,7 +153,7 @@ const AddMovie = (props) => {
         // 	});
 
         // 	// Update img in statelessFormData
-        // 	statelessFormData.img = `https://d34me5uwzdrtz6.cloudfront.net/movie_posters/${
+        // 	statelessFormData.img = `https://d2y7tzts0qnmfj.cloudfront.net/movie_posters/${
         // 		formData.title
         // 	}.${formData.img.name.split(".")[1]}`;
         // }
@@ -179,7 +179,7 @@ const AddMovie = (props) => {
         // 	});
 
         // 	// Update video in statelessFormData
-        // 	statelessFormData.video = `https://d34me5uwzdrtz6.cloudfront.net/movies/full_trailer/${
+        // 	statelessFormData.video = `https://d2y7tzts0qnmfj.cloudfront.net/movies/full_trailer/${
         // 		formData.title
         // 	}.${formData.video.name.split(".")[1]}`;
         // }

@@ -68,7 +68,7 @@ const AddUser = (props) => {
             });
 
             // Update img in statelessFormData
-            statelessFormData.profilePic = `https://d34me5uwzdrtz6.cloudfront.net/profile_images/${
+            statelessFormData.profilePic = `https://d2y7tzts0qnmfj.cloudfront.net/profile_images/${
                 formData.username
             }.${formData.profilePic.name.split(".")[1]}`;
 
