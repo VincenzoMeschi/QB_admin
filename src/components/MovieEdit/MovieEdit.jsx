@@ -231,23 +231,6 @@ const MovieEdit = (props) => {
         }
     };
 
-    const handlePreview = (e) => {
-        let file = e.target.files[0];
-        const fileType = file.type;
-        const fileSize = file.size;
-        const validTypes = ["video/mp4"];
-        const validSize = 50000000;
-
-        if (validTypes.includes(fileType) && fileSize < validSize) {
-            setFormData({
-                ...formData,
-                preview: file,
-            });
-        } else {
-            alert("File must be .mp4 and under 50MB");
-        }
-    };
-
     const handleClose = () => {
         props.setShowEdit(false);
 
@@ -256,11 +239,7 @@ const MovieEdit = (props) => {
             video: "",
             title: "",
             desc: "",
-            preview: "",
             year: "",
-            genre: "",
-            limit: "",
-            isSeries: false,
         });
         props.setReady(false);
     };
