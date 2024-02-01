@@ -6,7 +6,7 @@ import axios from "axios";
 import UserEdit from "../UserEdit/UserEdit";
 import Loading from "../../pages/Loading/Loading";
 
-const baseURL = "34.227.53.65:8080/api/users";
+const baseURL = "http://34.227.53.65:8080/api/users";
 
 const config = {
     headers: {

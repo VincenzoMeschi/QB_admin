@@ -21,7 +21,10 @@ const List = () => {
         };
         try {
             setFetchingData(true);
-            axios.delete(`34.227.53.65:8080/api/lists/find/${id}`, config);
+            axios.delete(
+                `http://34.227.53.65:8080/api/lists/find/${id}`,
+                config
+            );
             setNewLists((prevLists) =>
                 prevLists.filter((list) => list._id !== id)
             );

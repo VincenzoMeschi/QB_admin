@@ -13,7 +13,7 @@ const AddMovie = (props) => {
     });
     const [fetchingData, setFetchingData] = useState(false);
 
-    const baseURL = "34.227.53.65:8080/api/movies/";
+    const baseURL = "http://34.227.53.65:8080/api/movies/";
 
     if (fetchingData) {
         return <Loading />;
@@ -53,7 +53,7 @@ const AddMovie = (props) => {
         const handleImageUpload = () => {
             if (formData.img instanceof File) {
                 const uploadURL = axios.get(
-                    `34.227.53.65:8080/api/auth/s3/url/movie_posters/${
+                    `http://34.227.53.65:8080/api/auth/s3/url/movie_posters/${
                         formData.title
                     }.${formData.img.name.split(".")[1]}`,
                     {
@@ -92,7 +92,7 @@ const AddMovie = (props) => {
         const handleVideoUpload = () => {
             if (formData.video instanceof File) {
                 const uploadURL = axios.get(
-                    `34.227.53.65:8080/api/auth/s3/url/movies/${
+                    `http://34.227.53.65:8080/api/auth/s3/url/movies/${
                         formData.title
                     }.${formData.video.name.split(".")[1]}`,
                     {
@@ -135,7 +135,7 @@ const AddMovie = (props) => {
         // if (formData.img instanceof File) {
         // 	// Get Secure URL from Server
         // 	const uploadURL = await axios.get(
-        // 		`34.227.53.65:8080/api/auth/s3/url/movie_posters/${
+        // 		`http://34.227.53.65:8080/api/auth/s3/url/movie_posters/${
         // 			formData.title
         // 		}.${formData.img.name.split(".")[1]}`,
         // 		{
@@ -161,7 +161,7 @@ const AddMovie = (props) => {
         // if (formData.video instanceof File) {
         // 	// Get Secure URL from Server
         // 	const uploadURL = await axios.get(
-        // 		`34.227.53.65:8080/api/auth/s3/url/movies/${
+        // 		`http://34.227.53.65:8080/api/auth/s3/url/movies/${
         // 			formData.title
         // 		}.${formData.video.name.split(".")[1]}`,
         // 		{

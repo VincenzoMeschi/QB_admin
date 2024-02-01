@@ -46,7 +46,7 @@ const AddList = (props) => {
             },
         };
 
-        const baseURL = "34.227.53.65:8080/api/movies";
+        const baseURL = "http://34.227.53.65:8080/api/movies";
 
         const getMovies = async () => {
             try {
@@ -69,7 +69,7 @@ const AddList = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const baseURL = "34.227.53.65:8080/api/lists";
+        const baseURL = "http://34.227.53.65:8080/api/lists";
         const config = {
             headers: {
                 authorization: window.localStorage.getItem("authorization"),

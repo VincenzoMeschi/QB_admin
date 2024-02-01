@@ -6,7 +6,7 @@ import axios from "axios";
 import Loading from "../../pages/Loading/Loading";
 import ListEdit from "../ListEdit/ListEdit";
 
-const baseURL = "34.227.53.65:8080/api/lists";
+const baseURL = "http://34.227.53.65:8080/api/lists";
 
 const config = {
     headers: {
@@ -45,7 +45,7 @@ const ListList = (props) => {
             try {
                 setFetchingData(true);
                 const res = await axios.get(
-                    "34.227.53.65:8080/api/movies",
+                    "http://34.227.53.65:8080/api/movies",
                     config
                 );
                 setAllMovies(res.data);
