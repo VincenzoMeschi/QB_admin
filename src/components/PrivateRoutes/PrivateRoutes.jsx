@@ -6,29 +6,29 @@ import { useEffect, useState } from "react";
 import { authGetCurrentUserInfo } from "../../auth/auth";
 
 const PrivateRoutes = () => {
-	const [auth, setAuth] = useState(null);
+  const [auth, setAuth] = useState(null);
 
-	useEffect(() => {
-		const checkAuth = async () => {
-			const isAuthenticated = await authGetCurrentUserInfo();
-			setAuth(isAuthenticated);
-		};
+  useEffect(() => {
+    const checkAuth = async () => {
+      const isAuthenticated = await authGetCurrentUserInfo();
+      setAuth(isAuthenticated);
+    };
 
-		checkAuth();
-	}, []);
+    checkAuth();
+  }, []);
 
-	if (auth === null) {
-		return <Loading />;
-	}
+  if (auth === null) {
+    return <Loading />;
+  }
 
-	return auth ? (
-		<>
-			<Sidebar />
-			<Outlet />
-		</>
-	) : (
-		<Navigate to="/login" />
-	);
+  return auth ? (
+    <>
+      <Sidebar />
+      <Outlet />
+    </>
+  ) : (
+    <Navigate to="/login" />
+  );
 };
 
 export default PrivateRoutes;

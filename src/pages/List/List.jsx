@@ -6,46 +6,46 @@ import axios from "axios";
 import Loading from "../Loading/Loading";
 
 const List = () => {
-	const [newLists, setNewLists] = useState([]);
-	const [fetchingData, setFetchingData] = useState(false);
+    const [newLists, setNewLists] = useState([]);
+    const [fetchingData, setFetchingData] = useState(false);
 
-	const handleNewLists = (newList) => {
-		setNewLists(() => [newList]);
-	};
+    const handleNewLists = (newList) => {
+        setNewLists(() => [newList]);
+    };
 
-	const handleDeleteList = (id) => {
-		const config = {
-			headers: {
-				authorization: window.localStorage.getItem("authorization"),
-			},
-		};
-		try {
-			setFetchingData(true);
-			axios.delete(`https://api.rufftv.com/api/lists/find/${id}`, config);
-			setNewLists((prevLists) =>
-				prevLists.filter((list) => list._id !== id)
-			);
-			setFetchingData(false);
-		} catch (err) {
-			console.log(err.response.data);
-			setFetchingData(false);
-		}
-	};
+    const handleDeleteList = (id) => {
+        const config = {
+            headers: {
+                authorization: window.localStorage.getItem("authorization"),
+            },
+        };
+        try {
+            setFetchingData(true);
+            axios.delete(`34.227.53.65:8080/api/lists/find/${id}`, config);
+            setNewLists((prevLists) =>
+                prevLists.filter((list) => list._id !== id)
+            );
+            setFetchingData(false);
+        } catch (err) {
+            console.log(err.response.data);
+            setFetchingData(false);
+        }
+    };
 
-	if (fetchingData) {
-		return <Loading />;
-	}
+    if (fetchingData) {
+        return <Loading />;
+    }
 
-	return (
-		<div className="pageContainer">
-			<ListList
-				onListDelete={handleDeleteList}
-				setNewLists={handleNewLists}
-				newLists={newLists}
-			/>
-			<AddList onNewListAdded={handleNewLists} />
-		</div>
-	);
+    return (
+        <div className="pageContainer">
+            <ListList
+                onListDelete={handleDeleteList}
+                setNewLists={handleNewLists}
+                newLists={newLists}
+            />
+            <AddList onNewListAdded={handleNewLists} />
+        </div>
+    );
 };
 
 export default List;

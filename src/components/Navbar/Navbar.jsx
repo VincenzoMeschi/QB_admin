@@ -5,24 +5,24 @@ import AddToPhotosIcon from "@mui/icons-material/AddToPhotos";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-	return (
-		<div className="navbar">
-			<ul>
-				<li>
-					<GroupIcon className="icon" />
-					<Link to="/users">Users</Link>
-				</li>
-				<li>
-					<MovieIcon className="icon" />
-					<Link to="/movies">Movies</Link>
-				</li>
-				<li>
-					<AddToPhotosIcon className="icon" />
-					<Link to="/lists">Lists</Link>
-				</li>
-			</ul>
-		</div>
-	);
+  return (
+    <div className="navbar">
+      <ul>
+        <li>
+          <GroupIcon className="icon" />
+          <Link to="/users">Users</Link>
+        </li>
+        <li>
+          <MovieIcon className="icon" />
+          <Link to="/movies">Videos</Link>
+        </li>
+        <li>
+          <AddToPhotosIcon className="icon" />
+          <Link to="/lists">Lists</Link>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 export default Navbar;
