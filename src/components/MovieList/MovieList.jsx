@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "../../pages/Loading/Loading";
 
-const baseURL = "http://34.227.53.65:8080/api/movies";
+const baseURL = "https://api.dothisdrill.com/api/movies";
 
 const config = {
     headers: {

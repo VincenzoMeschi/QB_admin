@@ -6,7 +6,7 @@ export const authLogin = async (email, password) => {
         password: password,
     };
 
-    const baseURL = "http://34.227.53.65:8080/api/auth/login";
+    const baseURL = "https://api.dothisdrill.com/api/auth/login";
 
     const config = {
         headers: {
@@ -26,11 +26,14 @@ export const authLogout = () => {
 
 export const authGetCurrentUserInfo = async () => {
     try {
-        const response = await axios.get("http://34.227.53.65:8080/api/auth", {
-            headers: {
-                authorization: window.localStorage.getItem("authorization"),
-            },
-        });
+        const response = await axios.get(
+            "https://api.dothisdrill.com/api/auth",
+            {
+                headers: {
+                    authorization: window.localStorage.getItem("authorization"),
+                },
+            }
+        );
 
         // deconstruct password from response
         const { password, ...data } = response.data;

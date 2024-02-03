@@ -22,7 +22,7 @@ const List = () => {
         try {
             setFetchingData(true);
             axios.delete(
-                `http://34.227.53.65:8080/api/lists/find/${id}`,
+                `https://api.dothisdrill.com/api/lists/find/${id}`,
                 config
             );
             setNewLists((prevLists) =>

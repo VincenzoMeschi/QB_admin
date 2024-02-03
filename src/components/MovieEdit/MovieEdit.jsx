@@ -18,7 +18,8 @@ const MovieEdit = (props) => {
         const apiCall = () => {
             setFetchingData(true);
             const baseURL =
-                "http://34.227.53.65:8080/api/movies/find/" + props.editedMovie;
+                "https://api.dothisdrill.com/api/movies/find/" +
+                props.editedMovie;
             const config = {
                 headers: {
                     authorization: localStorage.getItem("authorization"),
@@ -75,7 +76,8 @@ const MovieEdit = (props) => {
                 },
             };
             const baseURL =
-                "http://34.227.53.65:8080/api/movies/find/" + props.editedMovie;
+                "https://api.dothisdrill.com/api/movies/find/" +
+                props.editedMovie;
             console.log(data);
             try {
                 axios.put(baseURL, data, config).then((res) => {
@@ -97,7 +99,7 @@ const MovieEdit = (props) => {
                 const lastIndex = originalData.img.lastIndexOf(".");
 
                 const deleteURL = await axios.get(
-                    `http://34.227.53.65:8080/api/auth/s3/delete/movie_posters/${
+                    `https://api.dothisdrill.com/api/auth/s3/delete/movie_posters/${
                         originalData.title
                     }.${originalData.img.substring(lastIndex + 1)}`,
                     {
@@ -118,7 +120,7 @@ const MovieEdit = (props) => {
             // Get Secure URL from Server
 
             const uploadURL = await axios.get(
-                `http://34.227.53.65:8080/api/auth/s3/url/movie_posters/${
+                `https://api.dothisdrill.com/api/auth/s3/url/movie_posters/${
                     formData.title
                 }.${formData.img.name.split(".")[1]}`,
                 {
@@ -149,7 +151,7 @@ const MovieEdit = (props) => {
                 const lastIndex = originalData.video.lastIndexOf(".");
 
                 const deleteURL = await axios.get(
-                    `http://34.227.53.65:8080/api/auth/s3/delete/movies/${
+                    `https://api.dothisdrill.com/api/auth/s3/delete/movies/${
                         originalData.title
                     }.${originalData.img.substring(lastIndex + 1)}`,
                     {
@@ -170,7 +172,7 @@ const MovieEdit = (props) => {
             // Get Secure URL from Server
 
             const uploadURL = await axios.get(
-                `http://34.227.53.65:8080/api/auth/s3/url/movies/${
+                `https://api.dothisdrill.com/api/auth/s3/url/movies/${
                     formData.title
                 }.${formData.video.name.split(".")[1]}`,
                 {

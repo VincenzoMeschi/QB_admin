@@ -11,7 +11,7 @@ const Settingsbar = () => {
     useEffect(() => {
         const userId = window.localStorage.getItem("userId");
         axios
-            .get("http://34.227.53.65:8080/api/users/find/" + userId, {
+            .get("https://api.dothisdrill.com/api/users/find/" + userId, {
                 headers: {
                     authorization: window.localStorage.getItem("authorization"),
                 },

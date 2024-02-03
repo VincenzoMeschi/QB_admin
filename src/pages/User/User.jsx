@@ -26,13 +26,13 @@ const User = () => {
         try {
             setFetchingData(true);
             const user = await axios.get(
-                `http://34.227.53.65:8080/api/users/find/${id}`,
+                `https://api.dothisdrill.com/api/users/find/${id}`,
                 config
             );
             const userImgUrl = user.data.profilePic;
 
             await axios.delete(
-                `http://34.227.53.65:8080/api/users/${id}`,
+                `https://api.dothisdrill.com/api/users/${id}`,
                 config
             );
             setNewUsers((prevUsers) =>
@@ -43,7 +43,7 @@ const User = () => {
                 // Delete User image from S3
                 const userImgPathIndex = userImgUrl.lastIndexOf("/");
                 const deleteUsersImgURL = await axios.get(
-                    `http://34.227.53.65:8080/api/auth/s3/delete/profile_images/${userImgUrl.substr(
+                    `https://api.dothisdrill.com/api/auth/s3/delete/profile_images/${userImgUrl.substr(
                         userImgPathIndex + 1
                     )}`,
                     {

@@ -45,7 +45,7 @@ const ListEdit = (props) => {
             },
         };
 
-        const baseURL = "http://34.227.53.65:8080/api/movies";
+        const baseURL = "https://api.dothisdrill.com/api/movies";
 
         const getMovies = async () => {
             try {
@@ -65,7 +65,8 @@ const ListEdit = (props) => {
         const apiCall = () => {
             setFetchingData(true);
             const baseURL =
-                "http://34.227.53.65:8080/api/lists/find/" + props.editedList;
+                "https://api.dothisdrill.com/api/lists/find/" +
+                props.editedList;
             const config = {
                 headers: {
                     authorization: localStorage.getItem("authorization"),
@@ -117,7 +118,7 @@ const ListEdit = (props) => {
             };
 
             const baseURL =
-                "http://34.227.53.65:8080/api/lists/" + props.editedList;
+                "https://api.dothisdrill.com/api/lists/" + props.editedList;
             console.log(data);
             try {
                 axios.put(baseURL, data, config).then((res) => {

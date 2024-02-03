@@ -18,7 +18,8 @@ const UserEdit = (props) => {
         const apiCall = () => {
             setFetchingData(true);
             const baseURL =
-                "http://34.227.53.65:8080/api/users/find/" + props.editedUser;
+                "https://api.dothisdrill.com/api/users/find/" +
+                props.editedUser;
             const config = {
                 headers: {
                     authorization: localStorage.getItem("authorization"),
@@ -70,7 +71,7 @@ const UserEdit = (props) => {
 
         const apiCall = async (data) => {
             const baseURL =
-                "http://34.227.53.65:8080/api/users/" + props.editedUser;
+                "https://api.dothisdrill.com/api/users/" + props.editedUser;
             const config = {
                 headers: {
                     authorization: window.localStorage.getItem("authorization"),
@@ -100,7 +101,7 @@ const UserEdit = (props) => {
                 const lastIndex = originalData.profilePic.lastIndexOf(".");
 
                 const deleteURL = await axios.get(
-                    `http://34.227.53.65:8080/api/auth/s3/delete/profile_images/${
+                    `https://api.dothisdrill.com/api/auth/s3/delete/profile_images/${
                         originalData.username
                     }.${originalData.profilePic.substring(lastIndex + 1)}`,
                     {
@@ -121,7 +122,7 @@ const UserEdit = (props) => {
             // Get Secure URL from Server
 
             const uploadURL = await axios.get(
-                `http://34.227.53.65:8080/api/auth/s3/url/profile_images/${
+                `https://api.dothisdrill.com/api/auth/s3/url/profile_images/${
                     formData.username
                 }.${formData.profilePic.name.split(".")[1]}`
             );

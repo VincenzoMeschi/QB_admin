@@ -14,7 +14,7 @@ const AddUser = (props) => {
 
     const [fetchingData, setFetchingData] = useState(false);
 
-    const baseURL = "http://34.227.53.65:8080/api/users/admin/create/user";
+    const baseURL = "https://api.dothisdrill.com/api/users/admin/create/user";
 
     const generateImage = (name) => {
         return (
@@ -56,7 +56,7 @@ const AddUser = (props) => {
         if (formData.profilePic instanceof File) {
             // Get Secure URL from Server
             const uploadURL = await axios.get(
-                `http://34.227.53.65:8080/api/auth/s3/url/profile_images/${
+                `https://api.dothisdrill.com/api/auth/s3/url/profile_images/${
                     statelessFormData.username
                 }.${statelessFormData.profilePic.name.split(".")[1]}`
             );

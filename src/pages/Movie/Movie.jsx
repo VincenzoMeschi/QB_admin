@@ -23,14 +23,14 @@ const Movie = () => {
         try {
             setFetchingData(true);
             const movie = await axios.get(
-                `http://34.227.53.65:8080/api/movies/find/${id}`,
+                `https://api.dothisdrill.com/api/movies/find/${id}`,
                 config
             );
             const movieUrl = movie.data.img;
             const movieVideoUrl = movie.data.video;
 
             await axios.delete(
-                `http://34.227.53.65:8080/api/movies/find/${id}`,
+                `https://api.dothisdrill.com/api/movies/find/${id}`,
                 config
             );
             setNewMovies((prevMovies) =>
@@ -39,7 +39,7 @@ const Movie = () => {
 
             const movieImgPathIndex = movieUrl.lastIndexOf("/");
             const deleteMovieImgURL = await axios.get(
-                `http://34.227.53.65:8080/api/auth/s3/delete/movie_posters/${movieUrl.substr(
+                `https://api.dothisdrill.com/api/auth/s3/delete/movie_posters/${movieUrl.substr(
                     movieImgPathIndex + 1
                 )}`,
                 {
@@ -60,7 +60,7 @@ const Movie = () => {
             // Delete Movie video from S3
             const moviePathIndex = movieVideoUrl.lastIndexOf("/");
             const deleteMoviesURL = await axios.get(
-                `http://34.227.53.65:8080/api/auth/s3/delete/movies/${movieVideoUrl.substr(
+                `https://api.dothisdrill.com/api/auth/s3/delete/movies/${movieVideoUrl.substr(
                     moviePathIndex + 1
                 )}`,
                 {
