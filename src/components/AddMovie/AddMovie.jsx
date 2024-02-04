@@ -69,7 +69,7 @@ const AddMovie = (props) => {
                         // Upload Image to S3
                         return axios.put(response.data, formData.img, {
                             headers: {
-                                "Content-Type": "multipart/form-data",
+                                "Content-Type": formData.img.type,
                             },
                         });
                     })
@@ -108,13 +108,13 @@ const AddMovie = (props) => {
                         // Upload Video to S3
                         return axios.put(response.data, formData.video, {
                             headers: {
-                                "Content-Type": "multipart/form-data",
+                                "Content-Type": formData.video.type,
                             },
                         });
                     })
                     .then(() => {
                         // Update video in statelessFormData
-                        statelessFormData.video = `https://d2y7tzts0qnmfj.cloudfront.net/movies/full_trailer/${
+                        statelessFormData.video = `https://d2y7tzts0qnmfj.cloudfront.net/movies/${
                             formData.title
                         }.${formData.video.name.split(".")[1]}`;
                     })
@@ -236,6 +236,7 @@ const AddMovie = (props) => {
                         name="file"
                         id="file"
                         onChange={handleFile}
+                        accept="image/*"
                     />
                 </div>
                 <div className="uploadMovieItem">
@@ -245,6 +246,7 @@ const AddMovie = (props) => {
                         name="video"
                         id="video"
                         onChange={handleVideo}
+                        accept="video/mp4"
                     />
                 </div>
 
